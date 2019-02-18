@@ -77,17 +77,6 @@ def tinyMazeSearch(problem):
 
 
 def depthFirstSearch(problem):
-    """
-    Search the deepest nodes in the search tree first.
-
-    Your search algorithm needs to return a list of actions that reaches the
-    goal. Make sure to implement a graph search algorithm.
-
-    To get started, you might want to try some of these simple commands to
-    understand the search problem that is being passed in:
-
-    """
-    "*** YOUR CODE HERE ***"
     print("Start:", problem.getStartState())
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
@@ -131,9 +120,47 @@ def depthFirstSearch(problem):
 
 
 def breadthFirstSearch(problem):
-    """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    print("Start:", problem.getStartState())
+    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+
+    queue = util.Queue()
+
+    # push the root onto the stack in the following format:
+    # [(state, action, cost)]
+    queue.push([(problem.getStartState(), "Stop", 0)])
+
+    # initialise a list for the visited nodes as an empty list
+    visited_nodes = []
+
+    # while the stack is no empty; i.e. there are still elements to be searched and we haven't found a solution
+    while not queue.isEmpty():
+        # get the path returned by the stack
+        path = queue.pop()
+        # get the last element in the list
+        current_state = path[-1][0]
+
+        # if a solution is found
+        if problem.isGoalState(current_state):
+            # return the list of path elements in path; i.e. (4,5), (5,4), (5,3) .. etc
+            return [x[1] for x in path][1:]
+
+        # if the node we are currently on hasn't yet been visited
+        if current_state not in visited_nodes:
+            # add current node to the list
+            visited_nodes.append(current_state)
+
+            # for every other element the hasnt yet been visited that is connect to current_node...
+            for next_node in problem.getSuccessors(current_state):
+                # copy parent nodes path
+                next_node_path = path[:]
+                # append our nodes path to the path list
+                next_node_path.append(next_node)
+                # push the list onto the stack
+                queue.push(next_node_path)
+
+    return False
+
 
 
 def uniformCostSearch(problem):
