@@ -12,6 +12,8 @@
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
 
+from __future__ import print_function
+
 """
 This file contains all of the agents that can be selected to control Pacman.  To
 select an agent, use the '-p' option when running pacman.py.  Arguments can be
@@ -162,7 +164,7 @@ class PositionSearchProblem(search.SearchProblem):
         self.costFn = costFn
         self.visualize = visualize
         if warn and (gameState.getNumFood() != 1 or not gameState.hasFood(*goal)):
-            print 'Warning: this does not look like a regular search maze'
+            print('Warning: this does not look like a regular search maze')
 
         # For display purposes
         self._visited, self._visitedlist, self._expanded = {}, [], 0  # DO NOT CHANGE
@@ -295,7 +297,7 @@ class CornersProblem(search.SearchProblem):
         self.corners = [(1, 1), (1, top), (right, 1), (right, top)]
         for corner in self.corners:
             if not startingGameState.hasFood(*corner):
-                print 'Warning: no food in corner ' + str(corner)
+                print('Warning: no food in corner ' + str(corner))
         self._expanded = 0  # DO NOT CHANGE; Number of search nodes expanded
 
     def getStartState(self):
@@ -303,7 +305,6 @@ class CornersProblem(search.SearchProblem):
         Returns the start state (in your state space, not the full Pacman state
         space)
         """
-        # state is a tuple: (coordinates, list of corners that have not been visited)
         return self.startingPosition, self.corners
 
     def isGoalState(self, state):
@@ -365,10 +366,9 @@ manhattan = lambda x1, y1, x2, y2: abs(x1 - x2) + abs(y1 - y2)
 
 def cornersHeuristic(state, problem):
     corners = state[1][:]  # These are the corner coordinates
-    heuristic = 0  # set heuristic = 0
+    heuristic = 0
     curr_pos = state[0]  # set the reference point to the current position
 
-    # while there are still unvisited corners
     while corners:
         x2, y2 = curr_pos
         # initialise the distances list
@@ -501,7 +501,7 @@ class ClosestDotSearchAgent(SearchAgent):
                     raise Exception, 'findPathToClosestDot returned an illegal move: %s!\n%s' % t
                 currentState = currentState.generateSuccessor(0, action)
         self.actionIndex = 0
-        print 'Path found with cost %d.' % len(self.actions)
+        print('Path found with cost %d.' % len(self.actions))
 
     def findPathToClosestDot(self, gameState):
         """

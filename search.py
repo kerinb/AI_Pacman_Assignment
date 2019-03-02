@@ -77,122 +77,71 @@ def tinyMazeSearch(problem):
 
 
 def depthFirstSearch(problem):
-    # initialise an empty stack where we can push/pop or paths from
     stack = util.Stack()
-
-    # push the root onto the stack in the following format:
-    # [(state, action, cost)]
     stack.push([(problem.getStartState(), "Stop", 0)])
-
-    # initialise a list for the visited nodes as an empty list
     visited_nodes = []
 
-    # while the stack is no empty; i.e. there are still elements to be searched and we haven't found a solution
     while not stack.isEmpty():
-        # get the path returned by the stack
         path = stack.pop()
-        # get the last element in the list
         current_state = path[-1][0]
 
-        # if a solution is found
         if problem.isGoalState(current_state):
-            # return the list of path elements in path; i.e. (4,5), (5,4), (5,3) .. etc
             return [x[1] for x in path][1:]
 
-        # if the node we are currently on hasn't yet been visited
         if current_state not in visited_nodes:
-            # add current node to the list
             visited_nodes.append(current_state)
 
-            # for every other element the hasnt yet been visited that is connect to current_node...
             for next_node in problem.getSuccessors(current_state):
-                # copy parent nodes path
                 next_node_path = path[:]
-                # append our nodes path to the path list
                 next_node_path.append(next_node)
-                # push the list onto the stack
                 stack.push(next_node_path)
 
     return False
 
 
 def breadthFirstSearch(problem):
-    # initialise an empty queue where we can push/pop or paths from
     queue = util.Queue()
-
-    # push the root onto the stack in the following format:
-    # [(state, action, cost)]
     queue.push([(problem.getStartState(), "Stop", 0)])
-
-    # initialise a list for the visited nodes as an empty list
     visited_nodes = []
 
-    # while the stack is no empty; i.e. there are still elements to be searched and we haven't found a solution
     while not queue.isEmpty():
-        # get the path returned by the stack
         path = queue.pop()
-        # get the last element in the list
         current_state = path[-1][0]
 
-        # if a solution is found
         if problem.isGoalState(current_state):
-            # return the list of path elements in path; i.e. (4,5), (5,4), (5,3) .. etc
             return [x[1] for x in path][1:]
 
-        # if the node we are currently on hasn't yet been visited
         if current_state not in visited_nodes:
-            # add current node to the list
             visited_nodes.append(current_state)
 
-            # for every other element the hasnt yet been visited that is connect to current_node...
             for next_node in problem.getSuccessors(current_state):
-                # copy parent nodes path
                 next_node_path = path[:]
-                # append our nodes path to the path list
                 next_node_path.append(next_node)
-                # push the list onto the stack
                 queue.push(next_node_path)
 
     return False
 
 
 def uniformCostSearch(problem):
-    # initialise an empty priority queue where we can push/pop or paths from
     cost_function = lambda path: problem.getCostOfActions([x[1] for x in path][1:])
-
     queue = util.PriorityQueueWithFunction(cost_function)
 
-    # push the root onto the stack in the following format:
-    # [(state, action, cost)]
     queue.push([(problem.getStartState(), "Stop", 0)])
-
-    # initialise a list for the visited nodes as an empty list
     visited_nodes = []
 
-    # while the stack is no empty; i.e. there are still elements to be searched and we haven't found a solution
     while not queue.isEmpty():
-        # get the path returned by the stack
         path = queue.pop()
-        # get the last element in the list
         current_state = path[-1][0]
 
-        # if a solution is found
         if problem.isGoalState(current_state):
-            # return the list of path elements in path; i.e. (4,5), (5,4), (5,3) .. etc
             return [x[1] for x in path][1:]
 
-        # if the node we are currently on hasn't yet been visited
         if current_state not in visited_nodes:
-            # add current node to the list
             visited_nodes.append(current_state)
 
-            # for every other element the hasnt yet been visited that is connect to current_node...
             for next_node in problem.getSuccessors(current_state):
-                # copy parent nodes path
                 next_node_path = path[:]
-                # append our nodes path to the path list
                 next_node_path.append(next_node)
-                # push the list onto the stack
                 queue.push(next_node_path)
 
     return False
@@ -207,42 +156,24 @@ def nullHeuristic(state, problem=None):
 
 
 def aStarSearch(problem, heuristic=nullHeuristic):
-    # initialise an empty priority queue where we can push/pop or paths from
     cost_function = lambda path: problem.getCostOfActions([x[1] for x in path][1:]) + heuristic(path[-1][0], problem)
-
     queue = util.PriorityQueueWithFunction(cost_function)
-
-    # push the root onto the stack in the following format:
-    # [(state, action, cost)]
     queue.push([(problem.getStartState(), "Stop", 0)])
-
-    # initialise a list for the visited nodes as an empty list
     visited_nodes = []
 
-    # while the stack is no empty; i.e. there are still elements to be searched and we haven't found a solution
     while not queue.isEmpty():
-        # get the path returned by the stack
         path = queue.pop()
-        # get the last element in the list
         current_state = path[-1][0]
 
-        # if a solution is found
         if problem.isGoalState(current_state):
-            # return the list of path elements in path; i.e. (4,5), (5,4), (5,3) .. etc
             return [x[1] for x in path][1:]
 
-        # if the node we are currently on hasn't yet been visited
         if current_state not in visited_nodes:
-            # add current node to the list
             visited_nodes.append(current_state)
 
-            # for every other element the hasnt yet been visited that is connect to current_node...
             for next_node in problem.getSuccessors(current_state):
-                # copy parent nodes path
                 next_node_path = path[:]
-                # append our nodes path to the path list
                 next_node_path.append(next_node)
-                # push the list onto the stack
                 queue.push(next_node_path)
 
     return False
