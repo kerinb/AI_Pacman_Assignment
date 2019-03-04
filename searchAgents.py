@@ -13,6 +13,8 @@
 
 
 from __future__ import print_function
+from util import manhattanDistance
+from search import breadthFirstSearch
 
 """
 This file contains all of the agents that can be selected to control Pacman.  To
@@ -481,8 +483,37 @@ def foodHeuristic(state, problem):
     problem.heuristicInfo['wallCount']
     """
     position, foodGrid = state
-    "*** YOUR CODE HERE ***"
-    return 0
+    hvalue = 0
+    food_available = []
+    total_distance = 0
+    for i in range(0, foodGrid.width):
+        for j in range(0, foodGrid.height):
+            if (foodGrid[i][j] == True):
+                food_location = (i, j)
+                food_available.append(food_location)
+
+    if (len(food_available) == 0):
+        return 0
+
+    max_distance = ((0, 0), (0, 0), 0)
+
+    for current_food in food_available:
+        for select_food in food_available:
+            if (current_food == select_food):
+                pass
+            else:
+                distance = manhattanDistance(current_food, select_food)
+                if (max_distance[2] < distance):
+                    max_distance = (current_food, select_food, distance)
+
+    if (max_distance[0] == (0, 0) and max_distance[1] == (0, 0)):
+        hvalue = manhattanDistance(position, food_available[0])
+    else:
+        d1 = manhattanDistance(position, max_distance[0])
+        d2 = manhattanDistance(position, max_distance[1])
+        hvalue = max_distance[2] + min(d1, d2)
+
+    return hvalue
 
 
 class ClosestDotSearchAgent(SearchAgent):
@@ -508,27 +539,24 @@ class ClosestDotSearchAgent(SearchAgent):
         Returns a path (a list of actions) to the closest dot, starting from
         gameState.
         """
-        # Here are some useful elements of the startState
         startPosition = gameState.getPacmanPosition()
         food = gameState.getFood()
         walls = gameState.getWalls()
         problem = AnyFoodSearchProblem(gameState)
 
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        action_list = breadthFirstSearch(problem)
+
+        return action_list
 
 
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
     A search problem for finding a path to any food.
-
     This search problem is just like the PositionSearchProblem, but has a
     different goal test, which you need to fill in below.  The state space and
     successor function do not need to be changed.
-
     The class definition above, AnyFoodSearchProblem(PositionSearchProblem),
     inherits the methods of the PositionSearchProblem.
-
     You can use this search problem to help you fill in the findPathToClosestDot
     method.
     """
@@ -550,9 +578,9 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         complete the problem definition.
         """
         x, y = state
-
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        foodGrid = self.food
+        if (foodGrid[x][y] == True) or (foodGrid.count() == 0):
+            return True
 
 
 def mazeDistance(point1, point2, gameState):
@@ -560,9 +588,7 @@ def mazeDistance(point1, point2, gameState):
     Returns the maze distance between any two points, using the search functions
     you have already built. The gameState can be any game state -- Pacman's
     position in that state is ignored.
-
     Example usage: mazeDistance( (2,4), (5,6), gameState)
-
     This might be a useful helper function for your ApproximateSearchAgent.
     """
     x1, y1 = point1
