@@ -33,7 +33,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pacman.py">
+        <entry file="file://$PROJECT_DIR$/singleAgentSearch/pacman.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="13398">
               <caret line="645" column="14" selection-start-line="645" selection-start-column="14" selection-end-line="645" selection-end-column="14" />
@@ -42,7 +42,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.py">
+        <entry file="file://$PROJECT_DIR$/singleAgentSearch/game.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="11823">
               <caret line="566" column="8" selection-start-line="566" selection-start-column="8" selection-end-line="566" selection-end-column="8" />
@@ -51,16 +51,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.py">
+        <entry file="file://$PROJECT_DIR$/singleAgentSearch/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="4662">
               <caret line="225" column="21" selection-start-line="225" selection-start-column="4" selection-end-line="225" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/search.py">
+        <entry file="file://$PROJECT_DIR$/singleAgentSearch/search.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3423">
               <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
@@ -69,10 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/searchAgents.py">
+        <entry file="file://$PROJECT_DIR$/singleAgentSearch/searchAgents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9914">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="268">
+              <caret line="591" column="7" selection-start-line="591" selection-start-column="7" selection-end-line="591" selection-end-column="7" />
               <folding>
                 <element signature="e#661#698#0" expanded="true" />
               </folding>
@@ -82,12 +82,20 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>cornersProblem</find>
       <find>visualize</find>
       <find>for dis</find>
       <find>find</find>
+      <find>man</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,6 +108,7 @@
         <option value="$PROJECT_DIR$/search/eightpuzzle.py" />
         <option value="$PROJECT_DIR$/search.py" />
         <option value="$PROJECT_DIR$/searchAgents.py" />
+        <option value="$PROJECT_DIR$/singleAgentSearch/searchAgents.py" />
       </list>
     </option>
   </component>
@@ -132,6 +141,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NunYurBusiness\PycharmProjects\search\singleAgentSearch" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -160,7 +174,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.45698926" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2731183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -207,38 +221,38 @@
     <entry file="file://$PROJECT_DIR$/search/game.py" />
     <entry file="file://$PROJECT_DIR$/search/pacman.py" />
     <entry file="file://$PROJECT_DIR$/search/util.py" />
-    <entry file="file://$PROJECT_DIR$/pacman.py">
+    <entry file="file://$PROJECT_DIR$/singleAgentSearch/pacman.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13398">
           <caret line="645" column="14" selection-start-line="645" selection-start-column="14" selection-end-line="645" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.py">
+    <entry file="file://$PROJECT_DIR$/singleAgentSearch/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11823">
           <caret line="566" column="8" selection-start-line="566" selection-start-column="8" selection-end-line="566" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search.py">
+    <entry file="file://$PROJECT_DIR$/singleAgentSearch/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4662">
+          <caret line="225" column="21" selection-start-line="225" selection-start-column="4" selection-end-line="225" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singleAgentSearch/search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3423">
           <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util.py">
+    <entry file="file://$PROJECT_DIR$/singleAgentSearch/searchAgents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="225" column="21" selection-start-line="225" selection-start-column="4" selection-end-line="225" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/searchAgents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9914">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state relative-caret-position="268">
+          <caret line="591" column="7" selection-start-line="591" selection-start-column="7" selection-end-line="591" selection-end-column="7" />
           <folding>
             <element signature="e#661#698#0" expanded="true" />
           </folding>
